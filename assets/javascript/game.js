@@ -22,13 +22,41 @@ $(document).ready(function() {
 
   $(".cpu-random-guess").text(cpuPick)
   $(".player-guess").text(gem)
-  console.log(gem)
-  console.log(cpuPick)
+
+  for(var i = 0; i< gemChoice.length;++1){
+    gemValue.push(gem);
+
+    gemDiv = $("<img>");
+
+    gemDiv.attr(scr ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR48mcPy21FDJkOGJrqUZBX6IthRPGTWF3nN2aO_FzH36iRXaO1")
+
+    gemDiv.attr("gem-property", gemValue[i]);
+
+    $(".gem").append(gemDiv);
+
+   }
+     
+ 
   $(".gem-icon").click(function(){
-    for(var i = 0; i< gemChoice.length;++1)
-      gemValue.push(gem);
-    console.log(gemValue);
+    
+    var gemProperty = ($(this).attr("gem-property"));
+    gemProperty = parseInt(gemProperty);
+
+    playerGuess += gemProperty;
     // take gem value and pass it to the player guess
+
+
+    if(cpuPick === playerGuess/*compare to what the player click and the value*/){
+      this.wins++;
+    } 
+    
+    
+    else if( cpuPick !== playerGuess/*player pick greater than cpu pick*/ ){
+      this.loses++;
+    }
+  
+
+
   })
 
   function gameReset(){
@@ -37,12 +65,7 @@ $(document).ready(function() {
 
   }
 
-  if(cpuPick === /*compare to what the player click and the value*/){
-    wins++;
-  } else if( /*player pick greater than cpu pick*/ ){
-    loses++;
-  }
-
+  // gameReset()
 
   
 
