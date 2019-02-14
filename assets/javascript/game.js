@@ -3,7 +3,7 @@
 $(document).ready(function() {
 
 
-  var gemRandomNum = 0;
+ 
   var wins = 0;
   var loses = 0;
   var playerGuess;
@@ -11,7 +11,7 @@ $(document).ready(function() {
   
   
   
-  // var gem = gemRandomNum[Math.floor(Math.random() * 12) + 1]
+  
   var cpuPick;
   
   $("#cpu-random-guess").append(cpuPick)
@@ -31,7 +31,7 @@ $(document).ready(function() {
     gemProperty = parseInt(gemProperty);
   
     playerGuess += gemProperty;
-    // take gem value and pass it to the player guess
+   
   
     $("#player-guess").text(playerGuess);
     console.log(cpuPick);
