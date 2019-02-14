@@ -1,22 +1,39 @@
 #gem{
   float: left;
+  position: relative;
+  left: 30%;
 }
 
 .score-card{
 float: left;
+position: relative;
+left: 25%;
+
 }
 
 h1{
   position: relative;
-  left: 130px ;
+  left: 42% ;
 }
 
 h2{
   font-size: 22px;
+  position: relative;
+  left: 25%;
 }
 
 #cpu-random-guess{
   position: relative;
   font-size: 20px;
-  left: 30px;
+  left: 25%;
+}
+
+.game-instructions{
+  text-align: center;
+  border: 1px solid palevioletred;
+}
+
+.player-guess-card{
+  position: relative;
+  left: 35%;
 }
