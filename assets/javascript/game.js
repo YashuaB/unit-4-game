@@ -2,98 +2,105 @@
 
 $(document).ready(function() {
 
-  var cpuRandomNum = 0;
+
   var gemRandomNum = 0;
   var wins = 0;
   var loses = 0;
-  var playerGuess = 0
-  var gemValue = []
-  var gemChoice = [1,2,3,4]
-
-  /*This for loop is for generating four random number
-  and pushing to the gems
+  var playerGuess;
   
-  for(var i = 0; i< gemChoice.length;++1){
-    gemValue.push(gem)
-  }*/
-
-  gem = gemRandomNum[Math.floor(Math.random() * 12) + 1]
-  cpuPick = cpuRandomNum[Math.floor(Math.random() * 120) + 19]
-
-  $(".cpu-random-guess").text(cpuPick)
-  $(".player-guess").text(gem)
-
-  for(var i = 0; i< gemChoice.length;++1){
-    gemValue.push(gem);
-
-    gemDiv = $("<img>");
-
-    gemDiv.attr(scr ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR48mcPy21FDJkOGJrqUZBX6IthRPGTWF3nN2aO_FzH36iRXaO1")
-
-    gemDiv.attr("gem-property", gemValue[i]);
-
-    $(".gem").append(gemDiv);
-
-   }
-     
- 
-  $(".gem-icon").click(function(){
+  
+  
+  
+  // var gem = gemRandomNum[Math.floor(Math.random() * 12) + 1]
+  var cpuPick;
+  
+  $("#cpu-random-guess").append(cpuPick)
+  
+  
+  
+  var ruby;
+  var saphire;
+  var emerald;
+  var amethyst;
+  
+  gameReset();
+  
+  $("img").click(function(){
     
     var gemProperty = ($(this).attr("gem-property"));
     gemProperty = parseInt(gemProperty);
-
+  
     playerGuess += gemProperty;
     // take gem value and pass it to the player guess
-
-
-    if(cpuPick === playerGuess/*compare to what the player click and the value*/){
-      this.wins++;
+  
+    $("#player-guess").text(playerGuess);
+    console.log(cpuPick);
+    console.log(playerGuess);
+    
+  
+    if (cpuPick === playerGuess) {
+      wins++;
+      $("#wins-scored").text(wins);
+      gameReset()
     } 
     
     
-    else if( cpuPick !== playerGuess/*player pick greater than cpu pick*/ ){
-      this.loses++;
+    else if (playerGuess > cpuPick) {
+      loses++;
+      $("#loses-scored").text(loses);
+      gameReset()
     }
   
-
-
+  
+  
   })
-
+  
   function gameReset(){
-    gemValue = [];
-    cpuPick;
-
+    cpuPick = Math.floor(Math.random() * 120) + 19;
+    $("#cpu-random-guess").text(cpuPick);
+    playerGuess = 0;
+  
+    ruby = Math.floor(Math.random() * 12) + 1;
+    saphire = Math.floor(Math.random() * 12) + 1;
+    emerald = Math.floor(Math.random() * 12) + 1;
+    amethyst = Math.floor(Math.random() * 12) + 1;
+  
+    $("#img1").attr("gem-property", ruby);
+    $("#img2").attr("gem-property", saphire);
+    $("#img3").attr("gem-property", emerald);
+    $("#img4").attr("gem-property", amethyst);
   }
-
-  // gameReset()
-
   
-
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  })
+  
