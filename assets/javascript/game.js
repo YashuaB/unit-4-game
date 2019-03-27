@@ -34,7 +34,7 @@ $(document).ready(function() {
    
   
     $("#player-guess").text(playerGuess);
-    console.log(cpuPick);
+   
     console.log(playerGuess);
     
   
