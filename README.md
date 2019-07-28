@@ -20,3 +20,7 @@ The game restarts whenever the player wins or loses.
 
 
 The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
+
+To run the application locally, first clone this repository with the following command.
+
+git clone https://github.com/YashuaB/unit-4-game.git
